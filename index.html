@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+
+
+
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="js/template.js"></script>
+
+
+
+</head>
+<body>
+
+<style>
+
+.slider_wrap {
+margin:0 auto;
+width:680px;
+height:400px;
+position:relative;
+overflow:hidden;
+}
+.slider_wrap img {
+width:640px;
+height:auto;
+display:none;
+position:absolute;
+top:0;
+left:20px;	
+}
+.slider_wrap img:first-child {
+display:block;
+}
+.slider_wrap span {
+
+width:15px;
+height:26px;
+display:block;
+position:absolute;
+top:50%;
+cursor:pointer;
+background:url(img/slider.png) no-repeat;
+}
+.slider_wrap span.next {
+right:0;
+background-position:-15px 0;
+}
+.slider_wrap span.next:hover {
+background-position:-15px -26px;
+}
+.slider_wrap span.prev {
+left:0;
+background-position: 0 0;
+}
+.slider_wrap span.prev:hover {
+background-position: 0 -26px;
+}
+
+.profile{
+	font-size: 20px;
+ width:250px; 
+    margin: 0 auto; 
+}
+
+.profile span{
+	padding-bottom: 10px;
+	border-bottom:2px solid grey;
+	
+}
+
+
+</style>
+
+
+
+
+<div id="slider" class="slider_wrap">		
+	<img alt="Image 1" class="active" src="img/1.jpg" />
+	<img alt="Image 2" src="img/2.jpg" />
+	<img alt="Image 3" src="img/3.jpg" />
+</div>
+
+
+
+   <script type="text/html"  id='test'>
+            <% for (var i = 0; i < data.length; i++ ) { %>
+                <div class="profile">
+                    <h2 class="title"><%= data[i].title %></h2>
+                    <span class="position"><%= data[i].position %></span>
+                     <p class="vk"><%=data[i].vk %></p>
+                     <p class="contacts"><%= data[i].contacts %></p>
+                    <a href="<%= data[i].email %>"  class="email"><%= data[i].email %></a>
+                    <p><a href="<%= data[i].skype %>" class="skype">Мой skype</a><p>
+                </div>
+            <% }; %>
+        </script>
+
+<script type="text/javascript" src="js/script.js"></script>
+
+
+</body>
+</html>
+
